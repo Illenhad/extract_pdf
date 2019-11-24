@@ -37,16 +37,6 @@ def extract(file_path, first_page, last_page):
 
         print('Created: {}'.format(new_name))
 
-    except ValueError:
-        print("ValueError")
-        print("file_path: {}".format(file_path))
-        print("first_page: {}".format(first_page))
-        print("last_page: {}".format(last_page))
-    except RuntimeError:
-        print("File RuntimeError")
-        print("file_path: {}".format(file_path))
-        print("first_page: {}".format(first_page))
-        print("last_page: {}".format(last_page))
     except:
         print("file_path: {}".format(file_path))
         print("first_page: {}".format(first_page))
