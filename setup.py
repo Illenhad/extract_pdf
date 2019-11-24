@@ -13,9 +13,9 @@ setup(
     author_email="pierrelegrand.pro@gmail.com",
     description="Extract PDF pages",
     long_description=open('README.md').read(),
-    install_requires=["pypdf2"],
+    install_requires=['pypdf2'],
     include_package_data=True,
-    url='',
+    url='https://github.com/Illenhad/extract_pdf',
     classifiers=[
         "Programming Language :: Python",
         "Development Status :: 1 - Pre-Alpha",

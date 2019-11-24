@@ -6,6 +6,6 @@
     By entering the file path and the desired pages, a pdf is returned.
 """
 
-__version__ = "0.0.1"
+__version__ = "0.1.1"
 
 from .core import extract
