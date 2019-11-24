@@ -25,16 +25,32 @@ def extract(file_path, first_page, last_page):
     """
     file_name = os.path.splitext(os.path.basename(file_path))[0]
     new_name = '{}_new.pdf'.format(file_name)
-    pdf = PdfFileReader(file_path)
+    try:
+        pdf = PdfFileReader(file_path)
+        pdf_writer = PdfFileWriter()
 
-    pdf_writer = PdfFileWriter()
-    for page in range(first_page - 1, last_page):
-        pdf_writer.addPage(pdf.getPage(page))
+        for page in range(first_page, last_page+1):
+            pdf_writer.addPage(pdf.getPage(page))
 
-    with open(new_name, 'wb') as out:
-        pdf_writer.write(out)
+        with open(new_name, 'wb') as out:
+            pdf_writer.write(out)
 
-    print('Created: {}'.format(new_name))
+        print('Created: {}'.format(new_name))
+
+    except ValueError:
+        print("ValueError")
+        print("file_path: {}".format(file_path))
+        print("first_page: {}".format(first_page))
+        print("last_page: {}".format(last_page))
+    except RuntimeError:
+        print("File RuntimeError")
+        print("file_path: {}".format(file_path))
+        print("first_page: {}".format(first_page))
+        print("last_page: {}".format(last_page))
+    except:
+        print("file_path: {}".format(file_path))
+        print("first_page: {}".format(first_page))
+        print("last_page: {}".format(last_page))
 
 
 if __name__ == '__main__':
